@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube2.0</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#0f0f0f] text-white font-sans antialiased">
+
+  <nav class="flex items-center justify-between px-4 py-2 h-14 sticky top-0 bg-[#0f0f0f] z-50">
+    
+    <div class="flex items-center gap-4">
+      <button class="p-2 hover:bg-[#272727] rounded-full text-xl transition">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="fixed left-5 flex items-center relative">
+        <img src="logo.svg" alt="YouTube Logo" class="h-5">
+        <span class="text-[10px] text-gray-400 absolute -right-4 -top-1">VE</span>
+      </div>
+    </div>
+
+    <div class="hidden md:flex flex-1 max-w-[720px] ml-10 items-center gap-4">
+      <div class="flex flex-1 items-center">
+        <div class="flex flex-1 bg-[#121212] border border-[#303030] rounded-l-full px-4 py-1.5 focus-within:border-blue-500 ml-10">
+          <input type="text" placeholder="Buscar" 
+            class="w-full bg-transparent outline-none font-semibold-300 text-white placeholder-gray-550">
+    </div>
+      <button class="bg-[#222222] border border-l-0 border-[#303030] rounded-r-full px-6 py-1.5 hover:bg-[#272727] transition">
+        <i class="fa-solid fa-magnifying-glass text-xl text-gray-300"></i>
+        </button>
+      </div>
+      
+      <button class="p-2.5 bg-[#222222] hover:bg-[#272727] rounded-full transition">
+        <i class="fa-solid fa-microphone"></i>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-4">
+      <button class="hidden sm:flex bg-[#272727] hover:bg-[#3f3f3f] text-white rounded-full px-4 py-1.5 items-center gap-2 font-medium text-sm transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+        <span>Crear</span>
+      </button>
+
+      <button class="p-2 hover:bg-[#272727] rounded-full relative transition">
+        <i class="fa-regular fa-bell"></i>
+        <span class="absolute top-1 left-4 bg-red-600 text-[12px] px-1 rounded-full">9+</span>
+      </button>
+
+      <img src="unnamed.jpg" class="w-8 h-8 rounded-full cursor-pointer object-cover ml-2" alt="Perfil">
+    </div>
+  </nav>
+
+  <aside class="fixed left-0 top-14 w-25 h-[calc(100vh-56px)] bg-[#0f0f0f] text-white overflow-y-auto px-3 py-2">
+  
+  <div class="space-y-1">
+    <a href="#" class="flex items-center gap-5 px-3 py-5 rounded-xl hover:bg-[#272727] transition-colors group">
+      <img src="menu.svg" class="w-6 h-6 invert" alt="Inicio">
+      <span class="absolute top-0 max-w-2xl mt-14 left-4 text-xs font-sans">Principal</span>
+    </a>
+
+    <a href="#" class="flex items-center gap-5 px-3 py-5 my-5 rounded-xl hover:bg-[#272727] transition-colors group">
+      <img src="video.svg" class="w-6 h-6 invert" alt="Shorts">
+      <span class="absolute top-0 max-w-2xl mt-35 left-5 text-xs font-sans">Shorts</span>
+    </a>
+
+    <a href="#" class="flex items-center gap-5 px-3 py-5 my-5 rounded-xl hover:bg-[#272727] transition-colors group">
+      <img src="suscripcion.svg" class="w-6 h-6 invert" alt="Suscripciones">
+      <span class="absolute top-0 max-w-2xl mt-56 left-1 text-xs font-sans">Suscripciones</span>
+    </a>
+  </div>
+
+  <div class="space-y-1">
+    <a href="#" class="flex items-center gap-5 px-3 py-5 my-5 rounded-xl hover:bg-[#272727] transition-colors group">
+      <img src="Perfil.svg" class="w-6 h-6 invert rounded-full" alt="Tu">
+      <span class="absolute top-0 max-w-2xl mt-77 left-7 text-xs font-sans">Tú</span>
+    </a>
+  </div>
+</aside>
+
+<div class="fixed left-25 flex items-center gap-3 overflow-x-auto whitespace-nowrap px-4 py-3 bg-[#0f0f0f] no-scrollbar z-50">
+  
+  <button class="bg-white text-black px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-200 transition">
+    Todos
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition border border-transparent">
+    Música
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Pop
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Desarrollo web
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Podcasts
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Mix
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Comedia
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Drama
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    En tiempo real
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition text-[13px]">
+    HTML
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Acción
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Teatro musical
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Ariana Grande
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Pop electrico
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    Maroon 5
+  </button>
+
+  <button class="bg-[#272727] text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-[#3f3f3f] transition">
+    VideoJuegos
+  </button>
+</div>
+
+<main class="bg-[#0f0f0f] p-25">
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 mt-8">
+    
+  <div class="flex flex-col gap-3 group">
+    <div class="relative aspect-video bg-[#1e1e1e] rounded-xl overflow-hidden cursor-pointer">
+      <img src="video1.jpg" class="w-full h-full object-cover transition group-hover:scale-105">
+      <span class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[12px] px-1.5 py-0.5 rounded font-bold">51:11</span>
+    </div>
+    <div class="flex gap-3">
+      <div class="w-9 h-9 rounded-full bg-blue-600 flex-shrink-0 flex items-center justify-center font-bold text-sm">PAM</div>
+      <div class="flex flex-col flex-1">
+        <h4 class="font-semibold text-normal leading-snug line-clamp-2 text-white">Confesiones de TACANOS EXTREMOS - Ep 175</h4>
+        <p class="text-sm text-gray-400 mt-1">LA PAREJA MAS ABURRIDA DEL MUNDO</p>
+        <p class="text-sm text-gray-400">22 k vistas • hace 3 dias</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-3 group">
+    <div class="relative aspect-video bg-[#1e1e1e] rounded-xl overflow-hidden cursor-pointer">
+      <img src="video2.jpg" class="w-full h-full object-cover transition group-hover:scale-105">
+      <span class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[12px] px-1.5 py-0.5 rounded font-bold">19:04</span>
+    </div>
+    <div class="flex gap-3">
+      <div class="w-9 h-9 rounded-full bg-purple-600 flex-shrink-0 flex items-center justify-center font-bold text-sm">CL</div>
+      <div class="flex flex-col flex-1">
+        <h4 class="font-semibold text-normal leading-snug line-clamp-2 text-white">PEDIMOS LO MISMO QUE LA PERSONA DE ENFRENTE!!</h4>
+        <p class="text-sm text-gray-400 mt-1">Cecia Loaiza</p>
+        <p class="text-sm text-gray-400">451 k espectadores • Hace 2 semanas</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-3 group">
+    <div class="relative aspect-video bg-[#1e1e1e] rounded-xl overflow-hidden cursor-pointer">
+      <img src="video3.jpg" class="w-full h-full object-cover transition group-hover:scale-105">
+      <span class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[12px] px-1.5 py-0.5 rounded font-bold">4:01</span>
+    </div>
+    <div class="flex gap-3">
+      <div class="w-9 h-9 rounded-full bg-red-600 flex-shrink-0 flex items-center justify-center font-bold text-sm">FC</div>
+      <div class="flex flex-col flex-1">
+        <h4 class="font-semibold text-normal leading-snug line-clamp-2 text-white">¿Que pasa si no aprendes esto antes de los 20? (segun la ciencia)</h4>
+        <p class="text-sm text-gray-400 mt-1">Fan de Ciencia</p>
+        <p class="text-sm text-gray-400">309 k vistas • hace 9 días</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 mt-8 pb-10">
+    
+  <div class="flex flex-col gap-3 group">
+    <div class="relative aspect-video bg-[#1e1e1e] rounded-xl overflow-hidden cursor-pointer">
+      <img src="video4.jpg" class="w-full h-full object-cover transition group-hover:scale-105">
+      <span class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[12px] px-1.5 py-0.5 rounded font-bold">8:20</span>
+    </div>
+    <div class="flex gap-3">
+      <div class="w-9 h-9 rounded-full bg-orange-600 flex-shrink-0 flex items-center justify-center font-bold text-sm">JS</div>
+      <div class="flex flex-col flex-1">
+        <h4 class="font-semibold text-normal leading-snug line-clamp-2 text-white">¿Por que te quedas "CONGELADO" cuando tienes mucho que hacer?</h4>
+        <p class="text-sm text-gray-400 mt-1">Notas de Blob.</p>
+        <p class="text-sm text-gray-400">107 k vistas • hace 11 dias</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-3 group">
+    <div class="relative aspect-video bg-[#1e1e1e] rounded-xl overflow-hidden cursor-pointer">
+      <img src="video5.jpg" class="w-full h-full object-cover transition group-hover:scale-105">
+      <span class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[12px] px-1.5 py-0.5 rounded font-bold">10:12</span>
+    </div>
+    <div class="flex gap-3">
+      <div class="w-9 h-9 rounded-full bg-green-600 flex-shrink-0 flex items-center justify-center font-bold text-sm">RF</div>
+      <div class="flex flex-col flex-1">
+        <h4 class="font-semibold text-normal leading-snug line-clamp-2 text-white">Dame 7 minutos y PROGRAMAR sera tu ADICCION</h4>
+        <p class="text-sm text-gray-400 mt-1">Alpaca Tech</p>
+        <p class="text-sm text-gray-400">199 k de vistas • hace 9 meses</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-3 group">
+    <div class="relative aspect-video bg-[#1e1e1e] rounded-xl overflow-hidden cursor-pointer">
+      <img src="video6.jpg" class="w-full h-full object-cover transition group-hover:scale-105">
+      <span class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[12px] px-1.5 py-0.5 rounded font-bold">2:30:30</span>
+    </div>
+    <div class="flex gap-3">
+      <div class="w-9 h-9 rounded-full bg-zinc-700 flex-shrink-0 flex items-center justify-center font-bold text-sm">S</div>
+      <div class="flex flex-col flex-1">
+        <h4 class="font-semibold text-normal leading-snug line-clamp-2 text-white">Sevdigim Sensin 6. Bolum</h4>
+        <p class="text-sm text-gray-400 mt-1">Sevdigim Sensin</p>
+        <p class="text-sm text-gray-400">3.8 M de vistas • hace 1 dia</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="bg-[#0f0f0f] text-white mx-20 px-6 mb-8">
+  
+  <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center gap-2">
+      <svg class="w-6 h-6 text-[#ff0000]" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.77 10.32l-1.2-.5L18 8.48a4.23 4.23 0 00-2.3-5.58 4.1 4.1 0 00-3.1-.11L6 5.11a4.18 4.18 0 00-2.41 5.45 4.25 4.25 0 002.3 2.3l1.2.5L5.6 15a4.23 4.23 0 002.3 5.58 4.1 4.1 0 003.1.11l6.6-2.31a4.18 4.18 0 002.41-5.45 4.25 4.25 0 00-2.3-2.31zM10 14.5v-5l4.5 2.5-4.5 2.5z"/>
+      </svg>
+      <span class="text-xl font-semibold tracking-tight">Shorts</span>
+    </div>
+    <button class="p-2 hover:bg-[#272727] rounded-full">
+      <i class="fa-solid fa-ellipsis-vertical"></i>
+    </button>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    
+    <div class="flex flex-col gap-2 group cursor-pointer">
+      <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-[#272727]">
+        <img src="shorts1.jpg" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" alt="Short">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        <button class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 p-1">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+      </div>
+      <div class="px-1">
+        <h4 class="text-normal font-semibold leading-snug line-clamp-2">El arte del baile turco #shorts</h4>
+        <p class="text-[13px] text-gray-500 mt-1 font-medium">26 k de vistas</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2 group cursor-pointer">
+      <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-[#272727]">
+        <img src="shorts2.jpg" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" alt="Short">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+      </div>
+      <div class="px-1">
+        <h4 class="text-normal font-semibold leading-snug line-clamp-2">Al fin juntos, Mi amor 🔥 #tealquilomiamor #shorts</h4>
+        <p class="text-[13px] text-gray-500 mt-1 font-medium">61 k de vistas</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2 group cursor-pointer">
+      <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-[#272727]">
+        <img src="shorts3.jpf.avif" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" alt="Short">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+      </div>
+      <div class="px-1">
+        <h4 class="text-normal font-semibold leading-snug line-clamp-2">Cuida tus palabras!! ☠️🔥 - Todo por mi familia | Karderlerim #shorts</h4>
+        <p class="text-[13px] text-gray-500 mt-1 font-medium">71 k de vistas</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2 group cursor-pointer">
+      <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-[#272727]">
+        <img src="shorts4.jpg" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" alt="Short">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+      </div>
+      <div class="px-1">
+        <h4 class="text-normal font-semibold leading-snug line-clamp-2">¿Ya puedo irme? - Huerfanas #shorts</h4>
+        <p class="text-[13px] text-gray-500 mt-1 font-medium">16 k de vistas</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2 group cursor-pointer">
+      <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-[#272727]">
+        <img src="shorts5.jpg" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" alt="Short">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+      </div>
+      <div class="px-1">
+        <h4 class="text-normal font-semibold leading-snug line-clamp-2">Serkan protegue a Meral - Huerfanas #shorts</h4>
+        <p class="text-[13px] text-gray-500 mt-1 font-medium">62 k vistas</p>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
