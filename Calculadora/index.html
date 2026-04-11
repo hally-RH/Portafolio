@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Document</title>
+</head>
+<body class="bg-slate-900 flex items-center justify-center h-screen">
+
+    <div class="bg-black p-6 rounded-3xl shadow-2xl w-80 border border-gray-800">
+        <input type="text" id="pantalla" readonly 
+            class="w-full h-20 bg-transparent text-white text-5xl text-right px-4 mb-6 outline-none font-light"
+            placeholder="0">
+
+        <div class="grid grid-cols-4 gap-3">
+            
+            <button onclick="limpiar()" class="col-span-2 bg-zinc-700 hover:bg-gray-300 text-white font-semibold py-4 rounded-full transition">C</button>
+            <button onclick="borrarUno()" class="bg-zinc-700 hover:bg-gray-300 text-white font-semibold py-4 rounded-full transition">⌫</button>
+            <button onclick="agregar('/')" class="bg-orange-500 hover:bg-orange-400 text-white text-xl font-bold py-4 rounded-full transition">÷</button>
+
+            <button onclick="agregar('7')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">7</button>
+            <button onclick="agregar('8')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">8</button>
+            <button onclick="agregar('9')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">9</button>
+            <button onclick="agregar('*')" class="bg-orange-500 hover:bg-orange-400 text-white text-xl font-light py-4 rounded-full transition">x</button>
+
+            <button onclick="agregar('4')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">4</button>
+            <button onclick="agregar('5')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">5</button>
+            <button onclick="agregar('6')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">6</button>
+            <button onclick="agregar('-')" class="bg-orange-500 hover:bg-orange-400 text-white text-xl font-bold py-4 rounded-full transition">-</button>
+
+            <button onclick="agregar('1')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">1</button>
+            <button onclick="agregar('2')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">2</button>
+            <button onclick="agregar('3')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">3</button>
+            <button onclick="agregar('+')" class="bg-orange-500 hover:bg-orange-400 text-white text-xl font-bold py-4 rounded-full transition">+</button>
+
+            <button onclick="agregar('0')" class="col-span-2 bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full px-8 text-left transition">0</button>
+            <button onclick="agregar('.')" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xl py-4 rounded-full transition">,</button>
+            <button onclick="calcular()" class="bg-orange-500 hover:bg-orange-400 text-white text-xl font-bold py-4 rounded-full transition">=</button>
+        </div>
+    </div>
+    
+    <script src="script.js">
+        const pantalla = document.getElementById("pantalla");
+
+        function agregar(valor) {
+            // Evitar que aparezca el "0" inicial si empezamos a escribir
+            if (pantalla.value === "0") pantalla.value = "";
+            pantalla.value += valor;
+        }
+
+        function limpiar() {
+            pantalla.value = "";
+        }
+
+        function borrarUno() {
+            pantalla.value = pantalla.value.slice(0, -1);
+        }
+
+        function calcular() {
+            try {
+                pantalla.value = eval(pantalla.value);
+            } catch (error) {
+                pantalla.value = "Error";
+                setTimeout(limpiar, 1000);
+            }
+        }
+    </script>
+  
+</body>
+</html>
